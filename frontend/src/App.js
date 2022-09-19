@@ -17,11 +17,8 @@ function App() {
         <Route element={<Register />} path="/Register" />
         <Route element={<Login/>} path="/login" />
         <Route element={<Home/>} path="/Home" />
-        <Route element={<Authorize>
-          <Suspense fallback={null}> 
-          <ProductCustomizer/>
-          </Suspense>
-        </Authorize>} path="/ProductCustomizer/:name" />
+        <Route element={<ProductCustomizer/>} path="ProductCustomizer/:name" />
+        <Route element={<Home/>} path="*" />
       </Routes>
     
 
