@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Home from "./components/Home";
 import Authorize from "./components/Authorize";
 import ProductCustomizer from "./components/ProductCustomizer";
+import { Suspense } from "react";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Route element={<Register />} path="/Register" />
         <Route element={<Login/>} path="/login" />
         <Route element={<Home/>} path="/Home" />
-        <Route element={<Authorize><ProductCustomizer/></Authorize>} path="/ProductCustomizer/:name" />
+        <Route element={<ProductCustomizer/>} path="ProductCustomizer/:name" />
         <Route element={<Home/>} path="*" />
       </Routes>
     

@@ -77,9 +77,9 @@ function ProductCustomizer() {
       scale : 1.5
     }
   }
-  console.log(name);
+  console.log(models[name].scale);
   // const modelName = "models/globe.glb";
-  const modelName = `models/${name}.glb`;
+  const modelName = `./models/${name}.glb`;
 
   const { nodes, materials } = useGLTF(modelName);
   console.log(nodes);
@@ -116,7 +116,7 @@ function ProductCustomizer() {
                 <Model
                   customMat={customMat}
                   modelname={modelName}
-                  scale = {models[name]}
+                  scale = {models[name].scale}
                   customColors={{
                     mesh: mesh,
                     stripes: stripes,
