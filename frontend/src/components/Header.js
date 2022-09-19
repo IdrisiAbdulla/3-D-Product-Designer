@@ -30,12 +30,13 @@ const Header = () => {
             >
               {/* Navbar brand */}
               <a className="navbar-brand mt-2 mt-lg-0" href="#">
-                <img
-                  src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-                  height={15}
+                {/* <img
+                  src="https://imgs.search.brave.com/fkNyPOffzZuMrwgvJ-gkgBEeb_xECrMpJGgMBIXvkqc/rs:fit:1200:800:1/g:ce/aHR0cHM6Ly93d3cu/Y29kZXN0ZXIuY29t/L3N0YXRpYy91cGxv/YWRzL2l0ZW1zLzAw/MC8wMDkvOTExNC9w/cmV2aWV3LXhsLmpw/Zw"
+                  height={35}
                   alt="MDB Logo"
                   loading="lazy"
-                />
+                  
+                /> */}
               </a>
               {/* Left links */}
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">

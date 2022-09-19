@@ -3,7 +3,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Model({ ...props }) {
   const group = useRef();
@@ -35,14 +35,13 @@ function Model({ ...props }) {
   };
 
   return (
-    <group ref={group} {...props} dispose={null} scale={props.scale}>
+    <group ref={group} {...props} dispose={null} scale={3.5}>
       {showModel()}
     </group>
   );
 }
 
 function ProductCustomizer() {
-  const navigate = useNavigate();
   const [currentUser, setCurrentUser] = useState(
     JSON.parse(sessionStorage.getItem("user"))
   );
@@ -56,30 +55,30 @@ function ProductCustomizer() {
   const [caps, setCaps] = useState("#ffffff");
   const [inner, setInner] = useState("#ffffff");
 
-  const {name} = useParams();
- 
+  const modelName = "models/shoe.glb";
 
-  const models = {
-    shoe : {
-      scale : 3.5,
-      name : 'Sports Shoe'
+  const models = [
+    {
+      name : 'Shoe',
+      scale : 3.5
     },
-    cricket : {
+    {
+      name : 'cricket',
       scale : 2
     },
-    globe: {
+    {
+      name : 'globe',
       scale : 6
     },
-    watch : {
+    {
+      name : 'watch',
       scale : 0.05
     },
-    headphone : {
+    {
+      name : 'headphone',
       scale : 1.5
     }
-  }
-  console.log(name);
-  // const modelName = "models/globe.glb";
-  const modelName = `models/${name}.glb`;
+  ]
 
   const { nodes, materials } = useGLTF(modelName);
   console.log(nodes);
@@ -116,7 +115,6 @@ function ProductCustomizer() {
                 <Model
                   customMat={customMat}
                   modelname={modelName}
-                  scale = {models[name]}
                   customColors={{
                     mesh: mesh,
                     stripes: stripes,
