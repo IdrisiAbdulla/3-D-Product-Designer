@@ -22,9 +22,14 @@ const Login = () => {
         icon : 'success',
         title : 'Login Successfully'
       })
+      const data = await response.json();
+      sessionStorage.setItem('user', JSON.stringify(data));
+
+
+
     }else if((response.status === 401)){
       Swal.fire({
-        icon : 'success',
+        icon : 'error',
         title : 'Login Failed'
       })
     }else{

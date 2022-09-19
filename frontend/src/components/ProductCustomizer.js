@@ -56,13 +56,29 @@ function ProductCustomizer() {
   const [caps, setCaps] = useState("#ffffff");
   const [inner, setInner] = useState("#ffffff");
 
-  const modelName = "models/shoe-draco.glb";
+  const modelName = "models/shoe.glb";
 
   const models = [
     {
-      name : '',
-      scale : 3
+      name : 'Shoe',
+      scale : 3.5
     },
+    {
+      name : 'cricket',
+      scale : 2
+    },
+    {
+      name : 'globe',
+      scale : 6
+    },
+    {
+      name : 'watch',
+      scale : 0.05
+    },
+    {
+      name : 'headphone',
+      scale : 1.5
+    }
   ]
 
   const { nodes, materials } = useGLTF(modelName);
@@ -84,10 +100,10 @@ function ProductCustomizer() {
       <div className="row" style={{ marginTop: "5vh" }}>
         <div className="col-md-8">
           <div
-            className="product-canvas border border-warning border-3 rounded-2"
-            style={{ marginLeft: "10px" }}
+            className="product-canvas border border-success border-3 rounded-6"
+            style={{ marginLeft: "40px" }}
           >
-            <Canvas style={{height: '50vh'}}>
+            <Canvas style={{height: '80vh'}}>
               <Suspense fallback={null}>
                 <ambientLight />
                 <spotLight
@@ -124,7 +140,7 @@ function ProductCustomizer() {
         <div className="col-md-4">
           <div className="card-c pallete-card">
             <div className="card-body">
-              <h2 className="text-center">Color chooser</h2>
+              <h2 className="text-center text-danger">Color chooser</h2>
               <hr />
               {customMat.map((mat, i) => (
                 <div className="card-body" style={{ paddingTop: "10px" }}>
