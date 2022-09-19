@@ -3,7 +3,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function Model({ ...props }) {
   const group = useRef();
@@ -35,7 +35,7 @@ function Model({ ...props }) {
   };
 
   return (
-    <group ref={group} {...props} dispose={null} scale={3.5}>
+    <group ref={group} {...props} dispose={null} scale={props.scale}>
       {showModel()}
     </group>
   );
@@ -56,30 +56,30 @@ function ProductCustomizer() {
   const [caps, setCaps] = useState("#ffffff");
   const [inner, setInner] = useState("#ffffff");
 
-  const modelName = "models/shoe.glb";
+  const {name} = useParams();
+ 
 
-  const models = [
-    {
-      name : 'Shoe',
-      scale : 3.5
+  const models = {
+    shoe : {
+      scale : 3.5,
+      name : 'Sports Shoe'
     },
-    {
-      name : 'cricket',
+    cricket : {
       scale : 2
     },
-    {
-      name : 'globe',
+    globe: {
       scale : 6
     },
-    {
-      name : 'watch',
+    watch : {
       scale : 0.05
     },
-    {
-      name : 'headphone',
+    headphone : {
       scale : 1.5
     }
-  ]
+  }
+  console.log(name);
+  // const modelName = "models/globe.glb";
+  const modelName = `models/${name}.glb`;
 
   const { nodes, materials } = useGLTF(modelName);
   console.log(nodes);
@@ -116,6 +116,7 @@ function ProductCustomizer() {
                 <Model
                   customMat={customMat}
                   modelname={modelName}
+                  scale = {models[name]}
                   customColors={{
                     mesh: mesh,
                     stripes: stripes,

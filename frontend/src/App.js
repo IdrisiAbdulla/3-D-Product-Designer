@@ -15,7 +15,7 @@ function App() {
         <Route element={<Register />} path="/Register" />
         <Route element={<Login/>} path="/login" />
         <Route element={<Home/>} path="/Home" />
-        <Route element={<Authorize><ProductCustomizer/></Authorize>} path="/ProductCustomizer" />
+        <Route element={<Authorize><ProductCustomizer/></Authorize>} path="/ProductCustomizer/:name" />
         <Route element={<Home/>} path="*" />
       </Routes>
     

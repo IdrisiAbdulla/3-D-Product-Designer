@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import "./Home.css";
 const Home = () => {
@@ -12,11 +12,14 @@ const Home = () => {
         <div className="row ">
           <div className="col-md-3 mt-3">
             <div className="card">
-              <img
-                src="models/jumbo.jpg"
+              <div className="thumbnail" style={{backgroundImage: "url('models/jumbo.jpg')"}}>
+
+              </div>
+              {/* <img
+                src=""
                 className="card-img-top mt-3 thumbnail"
                 alt="Fissure in Sandstone"
-              />
+              /> */}
               <div className="card-body">
                 3.7 <i className="fas fa-star text-warning" />
                 <h4 className="card-title">Shoe</h4>
@@ -25,7 +28,7 @@ const Home = () => {
                   the bulk of the card's content.
                 </p>
                 <button className="btn btn-primary- ">
-                   <a href="/ProductCustomizer">Start Designing</a>
+                   <Link to={"/ProductCustomizer/shoe"}>Start Designing</Link>
                 </button>
               </div>
             </div>
@@ -85,11 +88,8 @@ const Home = () => {
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </p>
-                <button
-                  className="btn btn-primary- ">
                     
-                 <a href="/ProductCustomizer">Start Designing</a>
-                </button>
+                 <Link to="/ProductCustomizer/watch" className="btn btn-link">Start Designing</Link>
               </div>
             </div>
           </div>

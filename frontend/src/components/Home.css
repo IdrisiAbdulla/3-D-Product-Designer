@@ -1,17 +1,14 @@
 
   .thumbnail{
 
-    height: 350px;
+    height: 300px;
     background-position: center;
-    background-size: cover;
-    
+    background-size: contain;
+    background-repeat: no-repeat;
   
   }
   .my-card-body{
     height: 600px;
-    
-    
-
   }
   .mybtn{
     position: absolute;
@@ -41,5 +38,9 @@
   .card{
     margin-top: 30px;
 
+  }
+
+  .bg{
+    height: 100vh;
   }
   
