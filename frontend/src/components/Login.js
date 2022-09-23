@@ -41,7 +41,7 @@ const Login = () => {
     return(
 <>
   {/* Section: Design Block */}
-  <section className="background-radial-gradient overflow-hidden">
+  <section className="background-radial-gradient overflow-hidden vh-100">
     <style
       dangerouslySetInnerHTML={{
         __html:
@@ -55,19 +55,19 @@ const Login = () => {
             className="my-5 display-5 fw-bold ls-tight"
             style={{ color: "hsl(218, 81%, 95%)" }}
           >
-            The best offer <br />
+            Log in to site <br />
             <span style={{ color: "hsl(218, 81%, 75%)" }}>
-              for your business
+              For Designing the unique product
             </span>
           </h1>
           <p
             className="mb-4 opacity-70"
             style={{ color: "hsl(218, 81%, 85%)" }}
           >
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Temporibus, expedita iusto veniam atque, magni tempora mollitia
-            dolorum consequatur nulla, neque debitis eos reprehenderit quasi ab
-            ipsum nisi dolorem modi. Quos?
+            3D models can be a great multifunctional tool helping manufacturers and designers first design, then create and finally market and sell their products.
+            Showcasing a product in 3D is the best alternative for spectacular presentation of a new product design or idea to other company members or potential customers. It allows quick changes in case when new ideas cross the mind and require minor or even major alterations.
+
+
           </p>
         </div>
         <div className="col-lg-6 mb-5 mb-lg-0 position-relative">
@@ -91,24 +91,26 @@ const Login = () => {
                   
                 </div>
                 {/* Email input */}
-                <div className="form-outline mb-4">
+                <label className="form-label" htmlFor="form3Example3">
+                    Email
+                  </label>
+                <div className=" mb-4">
                   <input
                     type="email"
                     id="email" value={values.email} onChange={handleChange} className="form-control"
                   />
-                  <label className="form-label" htmlFor="form3Example3">
-                    Email
-                  </label>
+                  
                 </div>
                 {/* Password input */}
-                <div className="form-outline mb-4">
+                <label className="form-label" htmlFor="form3Example4">
+                    Password
+                  </label>
+                <div className=" mb-4">
                   <input
                     type="password"
                     id="password" value={values.password} onChange={handleChange} className="form-control"
                   />
-                  <label className="form-label" htmlFor="form3Example4">
-                    Password
-                  </label>
+                 
                 </div>
                 {/* Checkbox */}
                 <div className="form-check d-flex justify-content-center mb-4">
